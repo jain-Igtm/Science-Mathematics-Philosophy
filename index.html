@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+
 :root {
     --bg-start: #ffffff;
     --bg-end: #f3f4f6;
@@ -16,6 +17,7 @@
     --line: #e6e6e6;
     --accent: #1e2a38;
 }
+
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
@@ -23,27 +25,32 @@ body {
     color: var(--text);
     animation: fadeIn 0.6s ease;
 }
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(6px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
 .container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 100px 30px;
 }
+
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 100px;
 }
+
 .brand {
     font-family: 'Playfair Display', serif;
     font-size: 22px;
     font-weight: 600;
     letter-spacing: 1px;
 }
+
 nav a {
     margin-left: 40px;
     text-decoration: none;
@@ -53,14 +60,23 @@ nav a {
     text-transform: uppercase;
     transition: color 0.2s ease;
 }
-nav a:hover { color: var(--accent); }
+
+nav a:hover {
+    color: var(--accent);
+}
+
 h1 {
     font-family: 'Playfair Display', serif;
     font-weight: 400;
     font-size: 70px;
     margin-bottom: 60px;
 }
-.controls { margin-bottom: 80px; position: relative; }
+
+.controls {
+    margin-bottom: 80px;
+    position: relative;
+}
+
 .search-bar {
     width: 100%;
     padding: 16px 20px;
@@ -69,12 +85,19 @@ h1 {
     background: white;
     margin-bottom: 30px;
 }
+
 .filter-toggle {
     font-size: 15px;
     cursor: pointer;
     color: var(--muted);
+    display: inline-block;
+    transition: color 0.2s ease;
 }
-.filter-toggle:hover { color: var(--accent); }
+
+.filter-toggle:hover {
+    color: var(--accent);
+}
+
 .filter-menu {
     display: none;
     margin-top: 20px;
@@ -82,38 +105,53 @@ h1 {
     border-top: 1px solid var(--line);
     columns: 2;
 }
+
 .filter-option {
     display: block;
     margin-bottom: 10px;
     font-size: 15px;
     cursor: pointer;
+    color: var(--text);
 }
-.filter-option:hover { color: var(--accent); }
+
+.filter-option:hover {
+    color: var(--accent);
+}
+
 .post {
     margin-bottom: 100px;
     padding-bottom: 60px;
     border-bottom: 1px solid var(--line);
 }
+
 .post h2 {
     font-family: 'Playfair Display', serif;
     font-size: 34px;
     font-weight: 400;
     margin-bottom: 10px;
 }
+
 .post .meta {
     font-size: 14px;
     color: var(--muted);
     margin-bottom: 20px;
 }
-.post p { font-size: 18px; line-height: 1.8; }
+
+.post p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
 footer {
     margin-top: 140px;
     font-size: 14px;
     color: var(--muted);
 }
+
 </style>
 </head>
 <body>
+
 <div class="container">
 
 <nav>
@@ -127,146 +165,111 @@ footer {
 <h1>Articles</h1>
 
 <div class="controls">
+
 <input type="text" class="search-bar" id="searchInput" placeholder="Search articles...">
+
 <div class="filter-toggle" onclick="toggleFilters()">Filter</div>
+
 <div class="filter-menu" id="filterMenu">
+
 <span class="filter-option" onclick="filterPosts('all')">All</span>
+
 <span class="filter-option" onclick="filterPosts('physics')">Physics</span>
-<span class="filter-option" onclick="filterPosts('cosmology')">Cosmology</span>
+<span class="filter-option" onclick="filterPosts('chemistry')">Chemistry</span>
 <span class="filter-option" onclick="filterPosts('biology')">Biology</span>
+<span class="filter-option" onclick="filterPosts('astronomy')">Astronomy</span>
+<span class="filter-option" onclick="filterPosts('geology')">Geology</span>
+<span class="filter-option" onclick="filterPosts('ecology')">Ecology</span>
 <span class="filter-option" onclick="filterPosts('neuroscience')">Neuroscience</span>
+<span class="filter-option" onclick="filterPosts('psychology')">Psychology</span>
 <span class="filter-option" onclick="filterPosts('parapsychology')">Parapsychology</span>
+<span class="filter-option" onclick="filterPosts('computer-science')">Computer Science</span>
+<span class="filter-option" onclick="filterPosts('engineering')">Engineering</span>
+<span class="filter-option" onclick="filterPosts('cosmology')">Cosmology</span>
+
 <span class="filter-option" onclick="filterPosts('topology')">Topology</span>
 <span class="filter-option" onclick="filterPosts('algebra')">Algebra</span>
 <span class="filter-option" onclick="filterPosts('analysis')">Analysis</span>
+<span class="filter-option" onclick="filterPosts('geometry')">Geometry</span>
+<span class="filter-option" onclick="filterPosts('number-theory')">Number Theory</span>
 <span class="filter-option" onclick="filterPosts('logic')">Logic</span>
+<span class="filter-option" onclick="filterPosts('set-theory')">Set Theory</span>
+<span class="filter-option" onclick="filterPosts('category-theory')">Category Theory</span>
+<span class="filter-option" onclick="filterPosts('probability')">Probability</span>
+<span class="filter-option" onclick="filterPosts('statistics')">Statistics</span>
+
 <span class="filter-option" onclick="filterPosts('metaphysics')">Metaphysics</span>
 <span class="filter-option" onclick="filterPosts('epistemology')">Epistemology</span>
+<span class="filter-option" onclick="filterPosts('ethics')">Ethics</span>
 <span class="filter-option" onclick="filterPosts('philosophy-of-science')">Philosophy of Science</span>
-</div>
+<span class="filter-option" onclick="filterPosts('philosophy-of-mind')">Philosophy of Mind</span>
+<span class="filter-option" onclick="filterPosts('logic-philosophy')">Philosophical Logic</span>
+
 </div>
 
-<!-- SCIENCE POSTS -->
+</div>
 
 <section class="post" data-category="physics cosmology">
-<h2>Boundary Conditions of the Observable Universe</h2>
-<div class="meta">Physics • Cosmology</div>
+<h2>Sample Physics Post</h2>
+<div class="meta">June 2026 • Physics • Cosmology</div>
 <p>
-The cosmological horizon is not merely a physical boundary but an epistemic one. Inflationary models suggest that the observable universe is a tiny patch of a vastly larger structure, yet our equations are written as though this patch is totality. The tension between global geometry and local measurement remains one of the quiet structural paradoxes in cosmology.
+Example post tagged with physics and cosmology.
+Add categories to posts using the data-category attribute.
 </p>
 </section>
-
-<section class="post" data-category="physics">
-<h2>Entanglement and the Failure of Local Intuition</h2>
-<div class="meta">Physics</div>
-<p>
-Bell’s theorem demonstrated that local hidden variable theories cannot reproduce quantum correlations. The experimental confirmations since Aspect have only sharpened the philosophical implications: locality, realism, or both must yield. The structure of causation itself appears non-classical.
-</p>
-</section>
-
-<section class="post" data-category="biology neuroscience">
-<h2>Emergence in Neural Networks and Biological Systems</h2>
-<div class="meta">Biology • Neuroscience</div>
-<p>
-Complexity in biological systems is not noise but structure at scale. Neural synchronization patterns show that cognition emerges from coordinated oscillatory dynamics rather than isolated firings. The brain is less a machine than a dynamically constrained field.
-</p>
-</section>
-
-<section class="post" data-category="parapsychology neuroscience">
-<h2>Clairvoyance as Information Integration Hypothesis</h2>
-<div class="meta">Parapsychology • Neuroscience</div>
-<p>
-If anomalous perception exists, it may be modeled not as supernatural intrusion but as expanded integration across probabilistic state spaces. The hypothesis is testable: deviations from chance must scale with structured expectation rather than raw randomness.
-</p>
-</section>
-
-<section class="post" data-category="cosmology physics">
-<h2>Inflation and the Geometry of Possibility</h2>
-<div class="meta">Cosmology</div>
-<p>
-Inflation explains homogeneity, yet it multiplies ontological commitments. Eternal inflation implies a landscape of universes differentiated by vacuum states. The mathematical elegance of scalar fields conceals an enormous metaphysical weight.
-</p>
-</section>
-
-<!-- MATHEMATICS POSTS -->
 
 <section class="post" data-category="topology mathematics">
-<h2>Topology as the Study of Structural Invariance</h2>
-<div class="meta">Mathematics • Topology</div>
+<h2>Topology and Structure</h2>
+<div class="meta">June 2026 • Mathematics • Topology</div>
 <p>
-Topology strips away measurement and retains continuity. A coffee mug and a torus share genus because their essential structure persists under deformation. The discipline reveals what is invariant beneath transformation — a philosophical act disguised as mathematics.
+Example mathematics post emphasizing topology.
 </p>
 </section>
 
-<section class="post" data-category="algebra mathematics">
-<h2>Group Theory and Symmetry in Physical Law</h2>
-<div class="meta">Mathematics • Algebra</div>
-<p>
-Symmetry groups encode conservation laws. Noether’s theorem binds algebraic invariance to physical constancy. Mathematics here is not descriptive; it is constitutive of physical intelligibility.
-</p>
-</section>
+</div>
 
-<section class="post" data-category="analysis mathematics">
-<h2>Continuity, Limits, and the Architecture of the Real Line</h2>
-<div class="meta">Mathematics • Analysis</div>
-<p>
-The real numbers are a completion of rationals under Cauchy convergence. This construction reveals that continuity is not given — it is imposed through formal structure. The infinite is domesticated through axiomatic discipline.
-</p>
-</section>
+<footer>
+<div class="container">© 2026</div>
+</footer>
 
-<section class="post" data-category="logic mathematics">
-<h2>Gödel and the Incompleteness of Formal Systems</h2>
-<div class="meta">Mathematics • Logic</div>
-<p>
-Gödel demonstrated that sufficiently expressive formal systems cannot prove their own consistency. The result does not destroy mathematics; it deepens it. Truth exceeds proof, and structure exceeds syntax.
-</p>
-</section>
+<script>
 
-<section class="post" data-category="topology">
-<h2>Manifolds and the Shape of Space</h2>
-<div class="meta">Topology</div>
-<p>
-A manifold generalizes the notion of surface to higher dimensions. General relativity relies on differentiable manifolds to model spacetime. Geometry becomes physics when curvature translates into gravitation.
-</p>
-</section>
+function toggleFilters() {
+    let menu = document.getElementById('filterMenu');
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+}
 
-<!-- PHILOSOPHY POSTS -->
+function filterPosts(category) {
+    let posts = document.querySelectorAll('.post');
 
-<section class="post" data-category="metaphysics philosophy-of-science">
-<h2>Structural Realism Revisited</h2>
-<div class="meta">Metaphysics • Philosophy of Science</div>
-<p>
-Structural realism claims that what science preserves across revolutions is structure rather than objects. The success of mathematical formalisms across theory change lends credibility to this position.
-</p>
-</section>
+    posts.forEach(post => {
+        let categories = post.getAttribute('data-category');
+        if (category === 'all' || categories.includes(category)) {
+            post.style.display = 'block';
+        } else {
+            post.style.display = 'none';
+        }
+    });
+}
 
-<section class="post" data-category="epistemology">
-<h2>Evidence, Bayesian Updating, and Rational Constraint</h2>
-<div class="meta">Epistemology</div>
-<p>
-Bayesian reasoning formalizes belief revision. Yet priors remain philosophically contentious. Rationality is not merely computation; it is disciplined openness to revision.
-</p>
-</section>
+document.getElementById('searchInput').addEventListener('keyup', function() {
+    let query = this.value.toLowerCase();
+    let posts = document.querySelectorAll('.post');
 
-<section class="post" data-category="metaphysics">
-<h2>Ontology After Quantum Theory</h2>
-<div class="meta">Metaphysics</div>
-<p>
-Quantum field theory replaces particles with excitations in fields. Ontology becomes processual rather than object-based. Substance gives way to structured interaction.
-</p>
-</section>
+    posts.forEach(post => {
+        let text = post.innerText.toLowerCase();
+        if (text.includes(query)) {
+            post.style.display = 'block';
+        } else {
+            post.style.display = 'none';
+        }
+    });
+});
 
-<section class="post" data-category="philosophy-of-science">
-<h2>Falsifiability and Its Limits</h2>
-<div class="meta">Philosophy of Science</div>
-<p>
-Popper’s criterion clarified scientific demarcation, yet contemporary theory often involves probabilistic confirmation rather than strict falsification. The philosophy of science must evolve alongside scientific method.
-</p>
-</section>
+</script>
 
-<section class="post" data-category="metaphysics topology">
-<h2>Continuity and Identity Through Change</h2>
-<div class="meta">Metaphysics • Topology</div>
+</body>
+</html>"meta">Metaphysics • Topology</div>
 <p>
 If identity persists under deformation, then topology offers a metaphor for persistence. Structural invariance may be the deepest form of identity.
 </p>
