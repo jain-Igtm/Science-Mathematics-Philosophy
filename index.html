@@ -4,65 +4,77 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Science, Mathematics, Philosophy</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
+
 body {
-    background: white;
-    color: black;
-    font-family: Georgia, "Times New Roman", serif;
-    max-width: 850px;
-    margin: 60px auto;
-    line-height: 1.8;
+    background: #ffffff;
+    color: #111111;
+    font-family: 'Inter', sans-serif;
+    max-width: 880px;
+    margin: 90px auto;
+    padding: 0 22px;
+    line-height: 1.75;
 }
 
 nav {
-    margin-bottom: 60px;
+    display: flex;
+    gap: 34px;
+    margin-bottom: 80px;
+    font-size: 15px;
 }
 
 nav a {
-    margin-right: 25px;
     text-decoration: none;
-    color: black;
-    font-size: 16px;
+    color: #666;
+    transition: color 0.2s ease;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: #000;
 }
 
 h1 {
+    font-family: 'Playfair Display', serif;
     font-style: italic;
-    font-weight: normal;
-    font-size: 46px;
-    margin-bottom: 50px;
+    font-weight: 400;
+    font-size: 56px;
+    margin-bottom: 70px;
 }
 
 .post {
-    margin-bottom: 80px;
-    padding-bottom: 50px;
-    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 110px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #efefef;
 }
 
 .post h2 {
-    font-weight: normal;
-    font-size: 30px;
-    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 36px;
+    margin-bottom: 14px;
 }
 
 .post .date {
     font-size: 14px;
-    color: #555;
-    margin-bottom: 25px;
+    color: #888;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
 }
 
 .post p {
-    margin-bottom: 20px;
+    font-size: 18px;
+    color: #222;
 }
 
 footer {
-    margin-top: 80px;
+    margin-top: 120px;
     font-size: 14px;
-    color: #777;
+    color: #888;
 }
+
 </style>
 </head>
 <body>
@@ -73,13 +85,14 @@ footer {
 <a href="literature.html">Literature</a>
 </nav>
 
-<h1><em>Science, Mathematics, Philosophy</em></h1>
+<h1>Science, Mathematics, Philosophy</h1>
 
 <section class="post">
 <h2>First Post</h2>
 <div class="date">June 2026</div>
 <p>
-Quantum Gravity does not violate Energy Conservation
+This is your first full post displayed directly on the homepage. Replace this with your real writing.
+To publish a new post, copy this entire post section and paste it above this one.
 </p>
 
 <script src="https://giscus.app/client.js"
