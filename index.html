@@ -13,7 +13,6 @@
     --bg: #f7f7f7;
     --text: #111;
     --muted: #777;
-    --accent: #000;
     --line: #e6e6e6;
 }
 
@@ -64,37 +63,49 @@ h1 {
 }
 
 .controls {
-    margin-bottom: 70px;
+    margin-bottom: 80px;
+    position: relative;
 }
 
 .search-bar {
     width: 100%;
-    padding: 14px 18px;
+    padding: 16px 20px;
     font-size: 16px;
     border: 1px solid var(--line);
     background: white;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
-.filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.filter-btn {
-    padding: 8px 18px;
-    border: 1px solid var(--line);
-    background: white;
-    font-size: 14px;
+.filter-toggle {
+    font-size: 15px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    color: var(--muted);
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s ease;
 }
 
-.filter-btn:hover,
-.filter-btn.active {
-    background: var(--text);
-    color: white;
+.filter-toggle:hover {
+    color: var(--text);
+}
+
+.filter-menu {
+    display: none;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+}
+
+.filter-option {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    color: var(--text);
+}
+
+.filter-option:hover {
+    text-decoration: underline;
 }
 
 .post {
@@ -134,7 +145,7 @@ footer {
 <div class="container">
 
 <nav>
-<div class="brand">Science, Mathematics, Philosophy</div>
+<div class="brand">Science, Mathematics, Philosophy.</div>
 <div>
 <a href="about.html">About</a>
 <a href="literature.html">Literature</a>
@@ -144,15 +155,19 @@ footer {
 <h1>Articles</h1>
 
 <div class="controls">
+
 <input type="text" class="search-bar" id="searchInput" placeholder="Search articles...">
 
-<div class="filters">
-<button class="filter-btn active" onclick="filterPosts('all')">All</button>
-<button class="filter-btn" onclick="filterPosts('science')">Science</button>
-<button class="filter-btn" onclick="filterPosts('mathematics')">Mathematics</button>
-<button class="filter-btn" onclick="filterPosts('philosophy')">Philosophy</button>
-<button class="filter-btn" onclick="filterPosts('parapsychology')">Parapsychology</button>
+<div class="filter-toggle" onclick="toggleFilters()">Filter by category</div>
+
+<div class="filter-menu" id="filterMenu">
+<span class="filter-option" onclick="filterPosts('all')">All</span>
+<span class="filter-option" onclick="filterPosts('science')">Science</span>
+<span class="filter-option" onclick="filterPosts('mathematics')">Mathematics</span>
+<span class="filter-option" onclick="filterPosts('philosophy')">Philosophy</span>
+<span class="filter-option" onclick="filterPosts('parapsychology')">Parapsychology</span>
 </div>
+
 </div>
 
 <section class="post" data-category="science parapsychology">
@@ -160,7 +175,7 @@ footer {
 <div class="meta">June 2026 • Science • Parapsychology</div>
 <p>
 Replace this with your real post. This post is tagged as science and parapsychology.
-Filtering and search both affect visibility dynamically.
+Search and filtering work together dynamically.
 </p>
 
 <script src="https://giscus.app/client.js"
@@ -188,23 +203,20 @@ Filtering and search both affect visibility dynamically.
 
 <script>
 
+function toggleFilters() {
+    let menu = document.getElementById('filterMenu');
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+}
+
 function filterPosts(category) {
     let posts = document.querySelectorAll('.post');
-    let buttons = document.querySelectorAll('.filter-btn');
-
-    buttons.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
 
     posts.forEach(post => {
-        if (category === 'all') {
+        let categories = post.getAttribute('data-category');
+        if (category === 'all' || categories.includes(category)) {
             post.style.display = 'block';
         } else {
-            let categories = post.getAttribute('data-category');
-            if (categories.includes(category)) {
-                post.style.display = 'block';
-            } else {
-                post.style.display = 'none';
-            }
+            post.style.display = 'none';
         }
     });
 }
