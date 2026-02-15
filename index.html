@@ -10,17 +10,25 @@
 <style>
 
 :root {
-    --bg: #f7f7f7;
+    --bg-start: #ffffff;
+    --bg-end: #f3f4f6;
     --text: #111;
     --muted: #777;
     --line: #e6e6e6;
+    --accent: #1e2a38;
 }
 
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background: var(--bg);
+    background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
     color: var(--text);
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .container {
@@ -40,6 +48,7 @@ nav {
     font-family: 'Playfair Display', serif;
     font-size: 22px;
     font-weight: 600;
+    letter-spacing: 1px;
 }
 
 nav a {
@@ -49,10 +58,11 @@ nav a {
     font-size: 14px;
     letter-spacing: 1px;
     text-transform: uppercase;
+    transition: color 0.2s ease;
 }
 
 nav a:hover {
-    color: var(--text);
+    color: var(--accent);
 }
 
 h1 {
@@ -81,10 +91,11 @@ h1 {
     cursor: pointer;
     color: var(--muted);
     display: inline-block;
+    transition: color 0.2s ease;
 }
 
 .filter-toggle:hover {
-    color: var(--text);
+    color: var(--accent);
 }
 
 .filter-menu {
@@ -104,7 +115,7 @@ h1 {
 }
 
 .filter-option:hover {
-    text-decoration: underline;
+    color: var(--accent);
 }
 
 .post {
@@ -163,7 +174,6 @@ footer {
 
 <span class="filter-option" onclick="filterPosts('all')">All</span>
 
-<!-- Science -->
 <span class="filter-option" onclick="filterPosts('physics')">Physics</span>
 <span class="filter-option" onclick="filterPosts('chemistry')">Chemistry</span>
 <span class="filter-option" onclick="filterPosts('biology')">Biology</span>
@@ -177,7 +187,6 @@ footer {
 <span class="filter-option" onclick="filterPosts('engineering')">Engineering</span>
 <span class="filter-option" onclick="filterPosts('cosmology')">Cosmology</span>
 
-<!-- Mathematics -->
 <span class="filter-option" onclick="filterPosts('topology')">Topology</span>
 <span class="filter-option" onclick="filterPosts('algebra')">Algebra</span>
 <span class="filter-option" onclick="filterPosts('analysis')">Analysis</span>
@@ -189,7 +198,6 @@ footer {
 <span class="filter-option" onclick="filterPosts('probability')">Probability</span>
 <span class="filter-option" onclick="filterPosts('statistics')">Statistics</span>
 
-<!-- Philosophy -->
 <span class="filter-option" onclick="filterPosts('metaphysics')">Metaphysics</span>
 <span class="filter-option" onclick="filterPosts('epistemology')">Epistemology</span>
 <span class="filter-option" onclick="filterPosts('ethics')">Ethics</span>
