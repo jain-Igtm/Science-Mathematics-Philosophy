@@ -13,7 +13,6 @@
     --bg: #f7f7f7;
     --text: #111;
     --muted: #777;
-    --accent: #000;
     --line: #e6e6e6;
 }
 
@@ -64,37 +63,43 @@ h1 {
 }
 
 .controls {
-    margin-bottom: 70px;
+    margin-bottom: 80px;
 }
 
 .search-bar {
     width: 100%;
-    padding: 14px 18px;
+    padding: 16px 20px;
     font-size: 16px;
     border: 1px solid var(--line);
     background: white;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
-.filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
 
-.filter-btn {
-    padding: 8px 18px;
+.dropdown select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 14px 18px;
+    font-size: 15px;
     border: 1px solid var(--line);
     background: white;
-    font-size: 14px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    min-width: 220px;
 }
 
-.filter-btn:hover,
-.filter-btn.active {
-    background: var(--text);
-    color: white;
+.dropdown::after {
+    content: "▾";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--muted);
 }
 
 .post {
@@ -146,12 +151,14 @@ footer {
 <div class="controls">
 <input type="text" class="search-bar" id="searchInput" placeholder="Search articles...">
 
-<div class="filters">
-<button class="filter-btn active" onclick="filterPosts('all')">All</button>
-<button class="filter-btn" onclick="filterPosts('science')">Science</button>
-<button class="filter-btn" onclick="filterPosts('mathematics')">Mathematics</button>
-<button class="filter-btn" onclick="filterPosts('philosophy')">Philosophy</button>
-<button class="filter-btn" onclick="filterPosts('parapsychology')">Parapsychology</button>
+<div class="dropdown">
+<select id="categorySelect" onchange="filterPosts()">
+<option value="all">All Categories</option>
+<option value="science">Science</option>
+<option value="mathematics">Mathematics</option>
+<option value="philosophy">Philosophy</option>
+<option value="parapsychology">Parapsychology</option>
+</select>
 </div>
 </div>
 
@@ -160,7 +167,7 @@ footer {
 <div class="meta">June 2026 • Science • Parapsychology</div>
 <p>
 Replace this with your real post. This post is tagged as science and parapsychology.
-Filtering and search both affect visibility dynamically.
+Search and dropdown filtering work together.
 </p>
 
 <script src="https://giscus.app/client.js"
@@ -188,23 +195,16 @@ Filtering and search both affect visibility dynamically.
 
 <script>
 
-function filterPosts(category) {
+function filterPosts() {
+    let selected = document.getElementById('categorySelect').value;
     let posts = document.querySelectorAll('.post');
-    let buttons = document.querySelectorAll('.filter-btn');
-
-    buttons.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
 
     posts.forEach(post => {
-        if (category === 'all') {
+        let categories = post.getAttribute('data-category');
+        if (selected === 'all' || categories.includes(selected)) {
             post.style.display = 'block';
         } else {
-            let categories = post.getAttribute('data-category');
-            if (categories.includes(category)) {
-                post.style.display = 'block';
-            } else {
-                post.style.display = 'none';
-            }
+            post.style.display = 'none';
         }
     });
 }
