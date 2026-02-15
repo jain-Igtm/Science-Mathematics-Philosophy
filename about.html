@@ -3,24 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About – Science, Mathematics, Philosophy</title>
+<title>About – Science, Mathematics, Philosophy.</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
 :root {
-    --bg: #f7f7f7;
+    --bg-start: #ffffff;
+    --bg-end: #f3f4f6;
     --text: #111;
     --muted: #777;
     --line: #e6e6e6;
+    --accent: #1e2a38;
 }
 
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background: var(--bg);
+    background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
     color: var(--text);
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .container {
@@ -40,6 +48,7 @@ nav {
     font-family: 'Playfair Display', serif;
     font-size: 22px;
     font-weight: 600;
+    letter-spacing: 1px;
 }
 
 nav a {
@@ -49,22 +58,23 @@ nav a {
     font-size: 14px;
     letter-spacing: 1px;
     text-transform: uppercase;
+    transition: color 0.2s ease;
 }
 
 nav a:hover {
-    color: var(--text);
+    color: var(--accent);
 }
 
 h1 {
     font-family: 'Playfair Display', serif;
     font-weight: 400;
-    font-size: 60px;
-    margin-bottom: 50px;
+    font-size: 64px;
+    margin-bottom: 60px;
 }
 
-p {
+.content {
     font-size: 19px;
-    line-height: 1.8;
+    line-height: 1.9;
     color: #222;
 }
 
@@ -81,7 +91,7 @@ footer {
 <div class="container">
 
 <nav>
-<div class="brand">Science, Mathematics, Philosophy</div>
+<div class="brand">Science, Mathematics, Philosophy.</div>
 <div>
 <a href="index.html">Home</a>
 <a href="literature.html">Literature</a>
@@ -90,10 +100,12 @@ footer {
 
 <h1>About</h1>
 
+<div class="content">
 <p>
-Write your bio here. This page presents your intellectual position, background,
-and aims for the journal. Edit this file in GitHub whenever you wish to revise it.
+Write your bio here. This page represents the intellectual orientation,
+intent, and scope of the publication. Edit this file in GitHub whenever you wish to revise it.
 </p>
+</div>
 
 <footer>
 © 2026
