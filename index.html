@@ -81,8 +81,6 @@ h1 {
     cursor: pointer;
     color: var(--muted);
     display: inline-block;
-    border-bottom: 1px solid transparent;
-    transition: color 0.2s ease;
 }
 
 .filter-toggle:hover {
@@ -94,11 +92,12 @@ h1 {
     margin-top: 20px;
     padding-top: 20px;
     border-top: 1px solid var(--line);
+    columns: 2;
 }
 
 .filter-option {
     display: block;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     font-size: 15px;
     cursor: pointer;
     color: var(--text);
@@ -161,38 +160,62 @@ footer {
 <div class="filter-toggle" onclick="toggleFilters()">Filter</div>
 
 <div class="filter-menu" id="filterMenu">
+
 <span class="filter-option" onclick="filterPosts('all')">All</span>
-<span class="filter-option" onclick="filterPosts('science')">Science</span>
-<span class="filter-option" onclick="filterPosts('mathematics')">Mathematics</span>
-<span class="filter-option" onclick="filterPosts('philosophy')">Philosophy</span>
+
+<!-- Science -->
+<span class="filter-option" onclick="filterPosts('physics')">Physics</span>
+<span class="filter-option" onclick="filterPosts('chemistry')">Chemistry</span>
+<span class="filter-option" onclick="filterPosts('biology')">Biology</span>
+<span class="filter-option" onclick="filterPosts('astronomy')">Astronomy</span>
+<span class="filter-option" onclick="filterPosts('geology')">Geology</span>
+<span class="filter-option" onclick="filterPosts('ecology')">Ecology</span>
+<span class="filter-option" onclick="filterPosts('neuroscience')">Neuroscience</span>
+<span class="filter-option" onclick="filterPosts('psychology')">Psychology</span>
 <span class="filter-option" onclick="filterPosts('parapsychology')">Parapsychology</span>
-</div>
+<span class="filter-option" onclick="filterPosts('computer-science')">Computer Science</span>
+<span class="filter-option" onclick="filterPosts('engineering')">Engineering</span>
+<span class="filter-option" onclick="filterPosts('cosmology')">Cosmology</span>
+
+<!-- Mathematics -->
+<span class="filter-option" onclick="filterPosts('topology')">Topology</span>
+<span class="filter-option" onclick="filterPosts('algebra')">Algebra</span>
+<span class="filter-option" onclick="filterPosts('analysis')">Analysis</span>
+<span class="filter-option" onclick="filterPosts('geometry')">Geometry</span>
+<span class="filter-option" onclick="filterPosts('number-theory')">Number Theory</span>
+<span class="filter-option" onclick="filterPosts('logic')">Logic</span>
+<span class="filter-option" onclick="filterPosts('set-theory')">Set Theory</span>
+<span class="filter-option" onclick="filterPosts('category-theory')">Category Theory</span>
+<span class="filter-option" onclick="filterPosts('probability')">Probability</span>
+<span class="filter-option" onclick="filterPosts('statistics')">Statistics</span>
+
+<!-- Philosophy -->
+<span class="filter-option" onclick="filterPosts('metaphysics')">Metaphysics</span>
+<span class="filter-option" onclick="filterPosts('epistemology')">Epistemology</span>
+<span class="filter-option" onclick="filterPosts('ethics')">Ethics</span>
+<span class="filter-option" onclick="filterPosts('philosophy-of-science')">Philosophy of Science</span>
+<span class="filter-option" onclick="filterPosts('philosophy-of-mind')">Philosophy of Mind</span>
+<span class="filter-option" onclick="filterPosts('logic-philosophy')">Philosophical Logic</span>
 
 </div>
 
-<section class="post" data-category="science parapsychology">
-<h2>Sample Science Post</h2>
-<div class="meta">June 2026 • Science • Parapsychology</div>
+</div>
+
+<section class="post" data-category="physics cosmology">
+<h2>Sample Physics Post</h2>
+<div class="meta">June 2026 • Physics • Cosmology</div>
 <p>
-Replace this with your real post. This post is tagged as science and parapsychology.
-Search and filtering work together dynamically.
+Example post tagged with physics and cosmology.
+Add categories to posts using the data-category attribute.
 </p>
+</section>
 
-<script src="https://giscus.app/client.js"
-        data-repo="jain-Igtm/Science-Mathematics-Philosophy"
-        data-repo-id="R_kgDORQoo-w"
-        data-category-id="DIC_kwDORQoo-84C2eMR"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="noborder_light"
-        data-lang="en"
-        crossorigin="anonymous"
-        async>
-</script>
-
+<section class="post" data-category="topology mathematics">
+<h2>Topology and Structure</h2>
+<div class="meta">June 2026 • Mathematics • Topology</div>
+<p>
+Example mathematics post emphasizing topology.
+</p>
 </section>
 
 </div>
