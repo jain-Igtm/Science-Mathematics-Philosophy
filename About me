@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About – Science, Mathematics, Philosophy</title>
+<style>
+body {
+    background: white;
+    color: black;
+    font-family: Georgia, "Times New Roman", serif;
+    max-width: 850px;
+    margin: 60px auto;
+    line-height: 1.8;
+}
+
+nav {
+    margin-bottom: 60px;
+}
+
+nav a {
+    margin-right: 25px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-style: italic;
+    font-weight: normal;
+    font-size: 46px;
+    margin-bottom: 50px;
+}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="literature.html">Literature</a>
+</nav>
+
+<h1><em>About</em></h1>
+
+<p>
+i study
+</p>
+
+</body>
+</html>
