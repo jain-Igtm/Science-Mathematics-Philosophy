@@ -5,66 +5,101 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About – Science, Mathematics, Philosophy</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
+:root {
+    --bg: #f7f7f7;
+    --text: #111;
+    --muted: #777;
+    --line: #e6e6e6;
+}
+
 body {
-    background: #ffffff;
-    color: #111111;
+    margin: 0;
     font-family: 'Inter', sans-serif;
-    max-width: 880px;
-    margin: 90px auto;
-    padding: 0 22px;
-    line-height: 1.75;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 100px 30px;
 }
 
 nav {
     display: flex;
-    gap: 34px;
-    margin-bottom: 80px;
-    font-size: 15px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
 }
 
 nav a {
+    margin-left: 40px;
     text-decoration: none;
-    color: #666;
-    transition: color 0.2s ease;
+    color: var(--muted);
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 nav a:hover {
-    color: #000;
+    color: var(--text);
 }
 
 h1 {
     font-family: 'Playfair Display', serif;
-    font-style: italic;
     font-weight: 400;
-    font-size: 52px;
-    margin-bottom: 60px;
+    font-size: 60px;
+    margin-bottom: 50px;
 }
 
 p {
-    font-size: 18px;
+    font-size: 19px;
+    line-height: 1.8;
     color: #222;
+}
+
+footer {
+    margin-top: 140px;
+    font-size: 14px;
+    color: var(--muted);
 }
 
 </style>
 </head>
 <body>
 
+<div class="container">
+
 <nav>
+<div class="brand">Science, Mathematics, Philosophy</div>
+<div>
 <a href="index.html">Home</a>
-<a href="about.html">About</a>
 <a href="literature.html">Literature</a>
+</div>
 </nav>
 
 <h1>About</h1>
 
 <p>
-Write your bio here. This page is public and read-only. 
-Edit this file in GitHub whenever you want to update it.
+Write your bio here. This page presents your intellectual position, background,
+and aims for the journal. Edit this file in GitHub whenever you wish to revise it.
 </p>
+
+<footer>
+© 2026
+</footer>
+
+</div>
 
 </body>
 </html>
