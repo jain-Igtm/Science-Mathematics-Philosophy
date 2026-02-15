@@ -1,4 +1,5 @@
-<!DOCTYPE html><html>
+<!DOCTYPE html>
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,80 +9,100 @@ body {
     background: white;
     color: black;
     font-family: Georgia, "Times New Roman", serif;
-    max-width: 800px;
+    max-width: 850px;
     margin: 60px auto;
-    line-height: 1.7;
-}h1 { font-style: italic; font-weight: normal; font-size: 42px; }
+    line-height: 1.8;
+}
 
-h2 { margin-top: 50px; font-weight: normal; }
+nav {
+    margin-bottom: 60px;
+}
 
-textarea, input { width: 100%; padding: 8px; margin-top: 6px; margin-bottom: 12px; border: 1px solid #ccc; font-family: inherit; font-size: 16px; }
+nav a {
+    margin-right: 25px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
 
-button { background: black; color: white; border: none; padding: 8px 14px; cursor: pointer; }
+nav a:hover {
+    text-decoration: underline;
+}
 
-.post { margin-top: 40px; }
+h1 {
+    font-style: italic;
+    font-weight: normal;
+    font-size: 46px;
+    margin-bottom: 50px;
+}
 
-small { color: #555; } </style>
+.post {
+    margin-bottom: 80px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #e5e5e5;
+}
 
+.post h2 {
+    font-weight: normal;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.post .date {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.post p {
+    margin-bottom: 20px;
+}
+
+footer {
+    margin-top: 80px;
+    font-size: 14px;
+    color: #777;
+}
+</style>
 </head>
-<body><h1>Science, Mathematics, Philosophy</h1><section>
-<h2>Bio</h2>
-<div id="bioDisplay"></div>
-<textarea id="bioInput" placeholder="Write your bio here..."></textarea>
-<button onclick="saveBio()">Save Bio</button>
-</section><section>
-<h2>New Post</h2>
-<input type="text" id="postTitle" placeholder="Post Title">
-<textarea id="postContent" rows="8" placeholder="Write your post..."></textarea>
-<button onclick="addPost()">Publish</button>
-</section><section id="posts"></section><script>
-function saveBio() {
-    const bioText = document.getElementById("bioInput").value;
-    localStorage.setItem("bio", bioText);
-    displayBio();
-}
+<body>
 
-function displayBio() {
-    const bio = localStorage.getItem("bio") || "";
-    document.getElementById("bioDisplay").innerText = bio;
-    document.getElementById("bioInput").value = bio;
-}
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="literature.html">Literature</a>
+</nav>
 
-function addPost() {
-    const title = document.getElementById("postTitle").value;
-    const content = document.getElementById("postContent").value;
-    if (!title || !content) return;
+<h1><em>Science, Mathematics, Philosophy</em></h1>
 
-    const posts = JSON.parse(localStorage.getItem("posts") || "[]");
-    posts.unshift({
-        title: title,
-        content: content,
-        date: new Date().toLocaleString()
-    });
-    localStorage.setItem("posts", JSON.stringify(posts));
+<section class="post">
+<h2>First Post</h2>
+<div class="date">June 2026</div>
+<p>
+This is your first full post displayed directly on the homepage. Replace this with your real writing.
+To publish a new post, copy this entire section and paste it above this one.
+</p>
 
-    document.getElementById("postTitle").value = "";
-    document.getElementById("postContent").value = "";
-    displayPosts();
-}
+<script src="https://giscus.app/client.js"
+        data-repo="jain-Igtm/Science-Mathematics-Philosophy"
+        data-repo-id="R_kgDORQoo-w"
+        data-category-id="DIC_kwDORQoo-84C2eMR"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="noborder_light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
 
-function displayPosts() {
-    const posts = JSON.parse(localStorage.getItem("posts") || "[]");
-    const container = document.getElementById("posts");
-    container.innerHTML = "";
+</section>
 
-    posts.forEach(post => {
-        const div = document.createElement("div");
-        div.className = "post";
-        div.innerHTML =
-            "<h2>" + post.title + "</h2>" +
-            "<small>" + post.date + "</small>" +
-            "<p>" + post.content.replace(/\\n/g, "<br>") + "</p>";
-        container.appendChild(div);
-    });
-}
+<footer>
+© 2026
+</footer>
 
-displayBio();
-displayPosts();
-</script></body>
+</body>
 </html>
