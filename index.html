@@ -13,6 +13,7 @@
     --bg: #f7f7f7;
     --text: #111;
     --muted: #777;
+    --accent: #000;
     --line: #e6e6e6;
 }
 
@@ -63,41 +64,37 @@ h1 {
 }
 
 .controls {
-    margin-bottom: 80px;
+    margin-bottom: 70px;
 }
 
 .search-bar {
     width: 100%;
-    padding: 16px 20px;
+    padding: 14px 18px;
     font-size: 16px;
     border: 1px solid var(--line);
     background: white;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
-.dropdown select {
-    appearance: none;
-    padding: 14px 18px;
-    font-size: 15px;
+.filter-btn {
+    padding: 8px 18px;
     border: 1px solid var(--line);
     background: white;
+    font-size: 14px;
     cursor: pointer;
-    min-width: 220px;
+    transition: all 0.2s ease;
 }
 
-.dropdown::after {
-    content: "▾";
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-    color: var(--muted);
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--text);
+    color: white;
 }
 
 .post {
@@ -137,26 +134,24 @@ footer {
 <div class="container">
 
 <nav>
-<div class="brand">Science, Mathematics, Philosophy.</div>
+<div class="brand">Science, Mathematics, Philosophy</div>
 <div>
 <a href="about.html">About</a>
 <a href="literature.html">Literature</a>
 </div>
 </nav>
 
-<h1>Science, Mathematics, Philosophy.</h1>
+<h1>Articles</h1>
 
 <div class="controls">
 <input type="text" class="search-bar" id="searchInput" placeholder="Search articles...">
 
-<div class="dropdown">
-<select id="categorySelect" onchange="filterPosts()">
-<option value="all">All Categories</option>
-<option value="science">Science</option>
-<option value="mathematics">Mathematics</option>
-<option value="philosophy">Philosophy</option>
-<option value="parapsychology">Parapsychology</option>
-</select>
+<div class="filters">
+<button class="filter-btn active" onclick="filterPosts('all')">All</button>
+<button class="filter-btn" onclick="filterPosts('science')">Science</button>
+<button class="filter-btn" onclick="filterPosts('mathematics')">Mathematics</button>
+<button class="filter-btn" onclick="filterPosts('philosophy')">Philosophy</button>
+<button class="filter-btn" onclick="filterPosts('parapsychology')">Parapsychology</button>
 </div>
 </div>
 
@@ -165,7 +160,7 @@ footer {
 <div class="meta">June 2026 • Science • Parapsychology</div>
 <p>
 Replace this with your real post. This post is tagged as science and parapsychology.
-Search and dropdown filtering work together.
+Filtering and search both affect visibility dynamically.
 </p>
 
 <script src="https://giscus.app/client.js"
@@ -193,16 +188,23 @@ Search and dropdown filtering work together.
 
 <script>
 
-function filterPosts() {
-    let selected = document.getElementById('categorySelect').value;
+function filterPosts(category) {
     let posts = document.querySelectorAll('.post');
+    let buttons = document.querySelectorAll('.filter-btn');
+
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
 
     posts.forEach(post => {
-        let categories = post.getAttribute('data-category');
-        if (selected === 'all' || categories.includes(selected)) {
+        if (category === 'all') {
             post.style.display = 'block';
         } else {
-            post.style.display = 'none';
+            let categories = post.getAttribute('data-category');
+            if (categories.includes(category)) {
+                post.style.display = 'block';
+            } else {
+                post.style.display = 'none';
+            }
         }
     });
 }
