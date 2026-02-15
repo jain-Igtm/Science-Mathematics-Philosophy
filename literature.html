@@ -4,41 +4,66 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Literature – Science, Mathematics, Philosophy</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
+
 body {
-    background: white;
-    color: black;
-    font-family: Georgia, "Times New Roman", serif;
-    max-width: 850px;
-    margin: 60px auto;
-    line-height: 1.8;
+    background: #ffffff;
+    color: #111111;
+    font-family: 'Inter', sans-serif;
+    max-width: 880px;
+    margin: 90px auto;
+    padding: 0 22px;
+    line-height: 1.75;
 }
 
 nav {
-    margin-bottom: 60px;
+    display: flex;
+    gap: 34px;
+    margin-bottom: 80px;
+    font-size: 15px;
 }
 
 nav a {
-    margin-right: 25px;
     text-decoration: none;
-    color: black;
-    font-size: 16px;
+    color: #666;
+    transition: color 0.2s ease;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: #000;
 }
 
 h1 {
+    font-family: 'Playfair Display', serif;
     font-style: italic;
-    font-weight: normal;
-    font-size: 46px;
-    margin-bottom: 50px;
+    font-weight: 400;
+    font-size: 52px;
+    margin-bottom: 60px;
 }
 
 ul {
     padding-left: 20px;
 }
+
+li {
+    margin-bottom: 14px;
+    font-size: 18px;
+}
+
+a.file-link {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+    transition: border-color 0.2s ease;
+}
+
+a.file-link:hover {
+    border-color: #000;
+}
+
 </style>
 </head>
 <body>
@@ -49,10 +74,10 @@ ul {
 <a href="literature.html">Literature</a>
 </nav>
 
-<h1><em>Literature</em></h1>
+<h1>Literature</h1>
 
 <ul>
-<li><a href="literature/sample-paper.pdf" target="_blank">Sample Paper</a></li>
+<li><a class="file-link" href="literature/sample-paper.pdf" target="_blank">Sample Paper</a></li>
 </ul>
 
 </body>
