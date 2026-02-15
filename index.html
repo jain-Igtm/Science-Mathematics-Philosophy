@@ -5,94 +5,162 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Science, Mathematics, Philosophy</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
+:root {
+    --bg: #f7f7f7;
+    --text: #111;
+    --muted: #777;
+    --accent: #000;
+    --line: #e6e6e6;
+}
+
 body {
-    background: #ffffff;
-    color: #111111;
+    margin: 0;
     font-family: 'Inter', sans-serif;
-    max-width: 880px;
-    margin: 90px auto;
-    padding: 0 22px;
-    line-height: 1.75;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 30px;
 }
 
 nav {
     display: flex;
-    gap: 34px;
-    margin-bottom: 80px;
-    font-size: 15px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
 }
 
 nav a {
+    margin-left: 40px;
     text-decoration: none;
-    color: #666;
-    transition: color 0.2s ease;
+    color: var(--muted);
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 nav a:hover {
-    color: #000;
+    color: var(--text);
 }
 
 h1 {
     font-family: 'Playfair Display', serif;
-    font-style: italic;
     font-weight: 400;
-    font-size: 56px;
+    font-size: 70px;
+    margin-bottom: 60px;
+}
+
+.controls {
     margin-bottom: 70px;
 }
 
+.search-bar {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 16px;
+    border: 1px solid var(--line);
+    background: white;
+    margin-bottom: 25px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.filter-btn {
+    padding: 8px 18px;
+    border: 1px solid var(--line);
+    background: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--text);
+    color: white;
+}
+
 .post {
-    margin-bottom: 110px;
+    margin-bottom: 100px;
     padding-bottom: 60px;
-    border-bottom: 1px solid #efefef;
+    border-bottom: 1px solid var(--line);
 }
 
 .post h2 {
     font-family: 'Playfair Display', serif;
+    font-size: 34px;
     font-weight: 400;
-    font-size: 36px;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
 }
 
-.post .date {
+.post .meta {
     font-size: 14px;
-    color: #888;
-    margin-bottom: 30px;
-    letter-spacing: 0.5px;
+    color: var(--muted);
+    margin-bottom: 20px;
 }
 
 .post p {
     font-size: 18px;
-    color: #222;
+    line-height: 1.8;
 }
 
 footer {
-    margin-top: 120px;
+    margin-top: 140px;
     font-size: 14px;
-    color: #888;
+    color: var(--muted);
 }
 
 </style>
 </head>
 <body>
 
+<div class="container">
+
 <nav>
-<a href="index.html">Home</a>
+<div class="brand">Science, Mathematics, Philosophy</div>
+<div>
 <a href="about.html">About</a>
 <a href="literature.html">Literature</a>
+</div>
 </nav>
 
-<h1>Science, Mathematics, Philosophy</h1>
+<h1>Articles</h1>
 
-<section class="post">
-<h2>First Post</h2>
-<div class="date">June 2026</div>
+<div class="controls">
+<input type="text" class="search-bar" id="searchInput" placeholder="Search articles...">
+
+<div class="filters">
+<button class="filter-btn active" onclick="filterPosts('all')">All</button>
+<button class="filter-btn" onclick="filterPosts('science')">Science</button>
+<button class="filter-btn" onclick="filterPosts('mathematics')">Mathematics</button>
+<button class="filter-btn" onclick="filterPosts('philosophy')">Philosophy</button>
+<button class="filter-btn" onclick="filterPosts('parapsychology')">Parapsychology</button>
+</div>
+</div>
+
+<section class="post" data-category="science parapsychology">
+<h2>Sample Science Post</h2>
+<div class="meta">June 2026 • Science • Parapsychology</div>
 <p>
-This is your first full post displayed directly on the homepage. Replace this with your real writing.
-To publish a new post, copy this entire post section and paste it above this one.
+Replace this with your real post. This post is tagged as science and parapsychology.
+Filtering and search both affect visibility dynamically.
 </p>
 
 <script src="https://giscus.app/client.js"
@@ -112,9 +180,50 @@ To publish a new post, copy this entire post section and paste it above this one
 
 </section>
 
+</div>
+
 <footer>
-© 2026
+<div class="container">© 2026</div>
 </footer>
+
+<script>
+
+function filterPosts(category) {
+    let posts = document.querySelectorAll('.post');
+    let buttons = document.querySelectorAll('.filter-btn');
+
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+
+    posts.forEach(post => {
+        if (category === 'all') {
+            post.style.display = 'block';
+        } else {
+            let categories = post.getAttribute('data-category');
+            if (categories.includes(category)) {
+                post.style.display = 'block';
+            } else {
+                post.style.display = 'none';
+            }
+        }
+    });
+}
+
+document.getElementById('searchInput').addEventListener('keyup', function() {
+    let query = this.value.toLowerCase();
+    let posts = document.querySelectorAll('.post');
+
+    posts.forEach(post => {
+        let text = post.innerText.toLowerCase();
+        if (text.includes(query)) {
+            post.style.display = 'block';
+        } else {
+            post.style.display = 'none';
+        }
+    });
+});
+
+</script>
 
 </body>
 </html>
