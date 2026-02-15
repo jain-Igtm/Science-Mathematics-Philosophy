@@ -3,24 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Literature – Science, Mathematics, Philosophy</title>
+<title>Literature – Science, Mathematics, Philosophy.</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
 :root {
-    --bg: #f7f7f7;
+    --bg-start: #ffffff;
+    --bg-end: #f3f4f6;
     --text: #111;
     --muted: #777;
     --line: #e6e6e6;
+    --accent: #1e2a38;
 }
 
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background: var(--bg);
+    background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
     color: var(--text);
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .container {
@@ -40,6 +48,7 @@ nav {
     font-family: 'Playfair Display', serif;
     font-size: 22px;
     font-weight: 600;
+    letter-spacing: 1px;
 }
 
 nav a {
@@ -49,39 +58,41 @@ nav a {
     font-size: 14px;
     letter-spacing: 1px;
     text-transform: uppercase;
+    transition: color 0.2s ease;
 }
 
 nav a:hover {
-    color: var(--text);
+    color: var(--accent);
 }
 
 h1 {
     font-family: 'Playfair Display', serif;
     font-weight: 400;
-    font-size: 60px;
+    font-size: 64px;
     margin-bottom: 60px;
 }
 
-ul {
+.lit-list {
     list-style: none;
     padding: 0;
 }
 
-li {
-    margin-bottom: 25px;
+.lit-item {
+    margin-bottom: 30px;
     font-size: 18px;
 }
 
-.file-link {
+.lit-link {
     text-decoration: none;
     color: var(--text);
     border-bottom: 1px solid var(--line);
     padding-bottom: 4px;
-    transition: border-color 0.2s ease;
+    transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.file-link:hover {
-    border-color: var(--text);
+.lit-link:hover {
+    color: var(--accent);
+    border-color: var(--accent);
 }
 
 footer {
@@ -97,7 +108,7 @@ footer {
 <div class="container">
 
 <nav>
-<div class="brand">Science, Mathematics, Philosophy</div>
+<div class="brand">Science, Mathematics, Philosophy.</div>
 <div>
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
@@ -106,8 +117,12 @@ footer {
 
 <h1>Literature</h1>
 
-<ul>
-<li><a class="file-link" href="literature/sample-paper.pdf" target="_blank">Sample Paper</a></li>
+<ul class="lit-list">
+<li class="lit-item">
+<a class="lit-link" href="literature/sample-paper.pdf" target="_blank">
+Sample Paper
+</a>
+</li>
 </ul>
 
 <footer>
