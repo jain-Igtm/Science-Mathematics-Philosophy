@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Science, Mathematics, Philosophy.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg-start:#ffffff;--bg-end:#f3f4f6;--text:#111;--muted:#777;--line:#e6e6e6;--accent:#1e2a38;}
+body{margin:0;font-family:'Inter',sans-serif;background:linear-gradient(to bottom,var(--bg-start),var(--bg-end));color:var(--text);}
+.container{max-width:1000px;margin:0 auto;padding:100px 30px;}
+nav{display:flex;justify-content:space-between;margin-bottom:100px;}
+.brand{font-family:'Playfair Display',serif;font-weight:600;}
+nav a{margin-left:40px;text-decoration:none;color:var(--muted);font-size:14px;text-transform:uppercase;}
+nav a:hover{color:var(--accent);}
+h1{font-family:'Playfair Display',serif;font-size:70px;margin-bottom:60px;}
+.controls{margin-bottom:80px;}
+.search-bar{width:100%;padding:16px;border:1px solid var(--line);margin-bottom:30px;}
+.filter-toggle{cursor:pointer;color:var(--muted);}
+.filter-toggle:hover{color:var(--accent);}
+.filter-menu{display:none;margin-top:20px;border-top:1px solid var(--line);padding-top:20px;columns:2;}
+.filter-option{display:block;margin-bottom:8px;cursor:pointer;}
+.post{margin-bottom:80px;padding-bottom:40px;border-bottom:1px solid var(--line);}
+.post h2{font-family:'Playfair Display',serif;font-weight:400;font-size:30px;}
+.meta{font-size:13px;color:var(--muted);margin-bottom:12px;}
+</style>
+</head>
+<body>
+<div class="container">
+<nav>
+<div class="brand">Science, Mathematics, Philosophy.</div>
+<div>
+<a href="about.html">About</a>
+<a href="literature.html">Literature</a>
+</div>
+</nav>
+<h1>Articles</h1>
+<div class="controls">
+<input class="search-bar" id="searchInput" placeholder="Search articles...">
+<div class="filter-toggle" onclick="toggleFilters()">Filter</div>
+<div class="filter-menu" id="filterMenu">
+<span class="filter-option" onclick="filterPosts('all')">All</span>
+<span class="filter-option" onclick="filterPosts('science')">Science</span>
+<span class="filter-option" onclick="filterPosts('mathematics')">Mathematics</span>
+<span class="filter-option" onclick="filterPosts('philosophy')">Philosophy</span>
+</div>
+</div>
+
+<section class="post" data-category="science">
+<h2>Physics Study 1</h2>
+<div class="meta">Science • Physics</div>
+<p>
+This essay explores structural questions within physics.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="science">
+<h2>Physics Study 2</h2>
+<div class="meta">Science • Physics</div>
+<p>
+This essay explores structural questions within physics.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="science">
+<h2>Physics Study 3</h2>
+<div class="meta">Science • Physics</div>
+<p>
+This essay explores structural questions within physics.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="science">
+<h2>Physics Study 4</h2>
+<div class="meta">Science • Physics</div>
+<p>
+This essay explores structural questions within physics.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="science">
+<h2>Physics Study 5</h2>
+<div class="meta">Science • Physics</div>
+<p>
+This essay explores structural questions within physics.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="science">
+<h2>Cosmology Study 1</h2>
+<div class="meta">Science • Cosmology</div>
+<p>
+This essay explores structural questions within cosmology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="science">
+<h2>Cosmology Study 2</h2>
+<div class="meta">Science • Cosmology</div>
+<p>
+This essay explores structural questions within cosmology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="science">
+<h2>Cosmology Study 3</h2>
+<div class="meta">Science • Cosmology</div>
+<p>
+This essay explores structural questions within cosmology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="science">
+<h2>Cosmology Study 4</h2>
+<div class="meta">Science • Cosmology</div>
+<p>
+This essay explores structural questions within cosmology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="science">
+<h2>Cosmology Study 5</h2>
+<div class="meta">Science • Cosmology</div>
+<p>
+This essay explores structural questions within cosmology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="science">
+<h2>Biology Study 1</h2>
+<div class="meta">Science • Biology</div>
+<p>
+This essay explores structural questions within biology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="science">
+<h2>Biology Study 2</h2>
+<div class="meta">Science • Biology</div>
+<p>
+This essay explores structural questions within biology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="science">
+<h2>Biology Study 3</h2>
+<div class="meta">Science • Biology</div>
+<p>
+This essay explores structural questions within biology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="science">
+<h2>Biology Study 4</h2>
+<div class="meta">Science • Biology</div>
+<p>
+This essay explores structural questions within biology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="science">
+<h2>Biology Study 5</h2>
+<div class="meta">Science • Biology</div>
+<p>
+This essay explores structural questions within biology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="science">
+<h2>Neuroscience Study 1</h2>
+<div class="meta">Science • Neuroscience</div>
+<p>
+This essay explores structural questions within neuroscience.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="science">
+<h2>Neuroscience Study 2</h2>
+<div class="meta">Science • Neuroscience</div>
+<p>
+This essay explores structural questions within neuroscience.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="science">
+<h2>Neuroscience Study 3</h2>
+<div class="meta">Science • Neuroscience</div>
+<p>
+This essay explores structural questions within neuroscience.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="science">
+<h2>Neuroscience Study 4</h2>
+<div class="meta">Science • Neuroscience</div>
+<p>
+This essay explores structural questions within neuroscience.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="science">
+<h2>Neuroscience Study 5</h2>
+<div class="meta">Science • Neuroscience</div>
+<p>
+This essay explores structural questions within neuroscience.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="science">
+<h2>Parapsychology Study 1</h2>
+<div class="meta">Science • Parapsychology</div>
+<p>
+This essay explores structural questions within parapsychology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="science">
+<h2>Parapsychology Study 2</h2>
+<div class="meta">Science • Parapsychology</div>
+<p>
+This essay explores structural questions within parapsychology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="science">
+<h2>Parapsychology Study 3</h2>
+<div class="meta">Science • Parapsychology</div>
+<p>
+This essay explores structural questions within parapsychology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="science">
+<h2>Parapsychology Study 4</h2>
+<div class="meta">Science • Parapsychology</div>
+<p>
+This essay explores structural questions within parapsychology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="science">
+<h2>Parapsychology Study 5</h2>
+<div class="meta">Science • Parapsychology</div>
+<p>
+This essay explores structural questions within parapsychology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Topology Study 1</h2>
+<div class="meta">Mathematics • Topology</div>
+<p>
+This essay explores structural questions within topology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Topology Study 2</h2>
+<div class="meta">Mathematics • Topology</div>
+<p>
+This essay explores structural questions within topology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Topology Study 3</h2>
+<div class="meta">Mathematics • Topology</div>
+<p>
+This essay explores structural questions within topology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Topology Study 4</h2>
+<div class="meta">Mathematics • Topology</div>
+<p>
+This essay explores structural questions within topology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Topology Study 5</h2>
+<div class="meta">Mathematics • Topology</div>
+<p>
+This essay explores structural questions within topology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Algebra Study 1</h2>
+<div class="meta">Mathematics • Algebra</div>
+<p>
+This essay explores structural questions within algebra.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Algebra Study 2</h2>
+<div class="meta">Mathematics • Algebra</div>
+<p>
+This essay explores structural questions within algebra.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Algebra Study 3</h2>
+<div class="meta">Mathematics • Algebra</div>
+<p>
+This essay explores structural questions within algebra.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Algebra Study 4</h2>
+<div class="meta">Mathematics • Algebra</div>
+<p>
+This essay explores structural questions within algebra.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Algebra Study 5</h2>
+<div class="meta">Mathematics • Algebra</div>
+<p>
+This essay explores structural questions within algebra.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Analysis Study 1</h2>
+<div class="meta">Mathematics • Analysis</div>
+<p>
+This essay explores structural questions within analysis.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Analysis Study 2</h2>
+<div class="meta">Mathematics • Analysis</div>
+<p>
+This essay explores structural questions within analysis.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Analysis Study 3</h2>
+<div class="meta">Mathematics • Analysis</div>
+<p>
+This essay explores structural questions within analysis.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Analysis Study 4</h2>
+<div class="meta">Mathematics • Analysis</div>
+<p>
+This essay explores structural questions within analysis.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Analysis Study 5</h2>
+<div class="meta">Mathematics • Analysis</div>
+<p>
+This essay explores structural questions within analysis.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Geometry Study 1</h2>
+<div class="meta">Mathematics • Geometry</div>
+<p>
+This essay explores structural questions within geometry.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Geometry Study 2</h2>
+<div class="meta">Mathematics • Geometry</div>
+<p>
+This essay explores structural questions within geometry.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Geometry Study 3</h2>
+<div class="meta">Mathematics • Geometry</div>
+<p>
+This essay explores structural questions within geometry.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Geometry Study 4</h2>
+<div class="meta">Mathematics • Geometry</div>
+<p>
+This essay explores structural questions within geometry.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Geometry Study 5</h2>
+<div class="meta">Mathematics • Geometry</div>
+<p>
+This essay explores structural questions within geometry.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Logic Study 1</h2>
+<div class="meta">Mathematics • Logic</div>
+<p>
+This essay explores structural questions within logic.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Logic Study 2</h2>
+<div class="meta">Mathematics • Logic</div>
+<p>
+This essay explores structural questions within logic.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Logic Study 3</h2>
+<div class="meta">Mathematics • Logic</div>
+<p>
+This essay explores structural questions within logic.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Logic Study 4</h2>
+<div class="meta">Mathematics • Logic</div>
+<p>
+This essay explores structural questions within logic.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="mathematics">
+<h2>Logic Study 5</h2>
+<div class="meta">Mathematics • Logic</div>
+<p>
+This essay explores structural questions within logic.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Metaphysics Study 1</h2>
+<div class="meta">Philosophy • Metaphysics</div>
+<p>
+This essay explores structural questions within metaphysics.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Metaphysics Study 2</h2>
+<div class="meta">Philosophy • Metaphysics</div>
+<p>
+This essay explores structural questions within metaphysics.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Metaphysics Study 3</h2>
+<div class="meta">Philosophy • Metaphysics</div>
+<p>
+This essay explores structural questions within metaphysics.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Metaphysics Study 4</h2>
+<div class="meta">Philosophy • Metaphysics</div>
+<p>
+This essay explores structural questions within metaphysics.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Metaphysics Study 5</h2>
+<div class="meta">Philosophy • Metaphysics</div>
+<p>
+This essay explores structural questions within metaphysics.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Epistemology Study 1</h2>
+<div class="meta">Philosophy • Epistemology</div>
+<p>
+This essay explores structural questions within epistemology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Epistemology Study 2</h2>
+<div class="meta">Philosophy • Epistemology</div>
+<p>
+This essay explores structural questions within epistemology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Epistemology Study 3</h2>
+<div class="meta">Philosophy • Epistemology</div>
+<p>
+This essay explores structural questions within epistemology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Epistemology Study 4</h2>
+<div class="meta">Philosophy • Epistemology</div>
+<p>
+This essay explores structural questions within epistemology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Epistemology Study 5</h2>
+<div class="meta">Philosophy • Epistemology</div>
+<p>
+This essay explores structural questions within epistemology.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Philosophy of Science Study 1</h2>
+<div class="meta">Philosophy • Philosophy of Science</div>
+<p>
+This essay explores structural questions within philosophy of science.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Philosophy of Science Study 2</h2>
+<div class="meta">Philosophy • Philosophy of Science</div>
+<p>
+This essay explores structural questions within philosophy of science.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Philosophy of Science Study 3</h2>
+<div class="meta">Philosophy • Philosophy of Science</div>
+<p>
+This essay explores structural questions within philosophy of science.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Philosophy of Science Study 4</h2>
+<div class="meta">Philosophy • Philosophy of Science</div>
+<p>
+This essay explores structural questions within philosophy of science.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Philosophy of Science Study 5</h2>
+<div class="meta">Philosophy • Philosophy of Science</div>
+<p>
+This essay explores structural questions within philosophy of science.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Philosophy of Mind Study 1</h2>
+<div class="meta">Philosophy • Philosophy of Mind</div>
+<p>
+This essay explores structural questions within philosophy of mind.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Philosophy of Mind Study 2</h2>
+<div class="meta">Philosophy • Philosophy of Mind</div>
+<p>
+This essay explores structural questions within philosophy of mind.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Philosophy of Mind Study 3</h2>
+<div class="meta">Philosophy • Philosophy of Mind</div>
+<p>
+This essay explores structural questions within philosophy of mind.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Philosophy of Mind Study 4</h2>
+<div class="meta">Philosophy • Philosophy of Mind</div>
+<p>
+This essay explores structural questions within philosophy of mind.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Philosophy of Mind Study 5</h2>
+<div class="meta">Philosophy • Philosophy of Mind</div>
+<p>
+This essay explores structural questions within philosophy of mind.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Ethics Study 1</h2>
+<div class="meta">Philosophy • Ethics</div>
+<p>
+This essay explores structural questions within ethics.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Ethics Study 2</h2>
+<div class="meta">Philosophy • Ethics</div>
+<p>
+This essay explores structural questions within ethics.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Ethics Study 3</h2>
+<div class="meta">Philosophy • Ethics</div>
+<p>
+This essay explores structural questions within ethics.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Ethics Study 4</h2>
+<div class="meta">Philosophy • Ethics</div>
+<p>
+This essay explores structural questions within ethics.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+<section class="post" data-category="philosophy">
+<h2>Ethics Study 5</h2>
+<div class="meta">Philosophy • Ethics</div>
+<p>
+This essay explores structural questions within ethics.
+The discussion centers on methodological rigor, formal constraints,
+and theoretical continuity across frameworks.
+</p>
+</section>
+
+</div>
+<footer><div class="container">© 2026</div></footer>
+<script>
+function toggleFilters(){let m=document.getElementById('filterMenu');m.style.display=(m.style.display==='block')?'none':'block';}
+function filterPosts(c){let p=document.querySelectorAll('.post');p.forEach(post=>{if(c==='all'||post.dataset.category.includes(c)){post.style.display='block';}else{post.style.display='none';}});}
+document.getElementById('searchInput').addEventListener('keyup',function(){let q=this.value.toLowerCase();let p=document.querySelectorAll('.post');p.forEach(post=>{if(post.innerText.toLowerCase().includes(q)){post.style.display='block';}else{post.style.display='none';}});});
+</script>
+</body>
+</html>
